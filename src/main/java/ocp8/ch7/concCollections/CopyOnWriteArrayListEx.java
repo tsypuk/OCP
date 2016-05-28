@@ -33,6 +33,6 @@ public class CopyOnWriteArrayListEx {
             System.out.println("item=" + item + "size:" + list.size());
             list.add(7);
         }
-        System.out.println("relust: " + list);
+        System.out.println("result: " + list);
     }
 }

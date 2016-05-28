@@ -2,6 +2,14 @@ package ocp8.ch1;
 
 /**
  * Created by rtsy on 23.01.2016.
+ *  HeavyAnimal
+ *      |       |
+ *      Hippo   Elephant
+ *         |
+ *         |
+ * Mother  |
+ * |       |
+ * MotherHippo
  */
 public class InstanceOf {
 

@@ -19,7 +19,7 @@ public class SeasonTest {
             System.out.println(season.name() + " :: " + season.ordinal());
             switch (season) {
                 case WINTER:
-                System.out.println("winter");
+                    System.out.println("winter");
                     break;
                 case SPRING:
                     break;

@@ -3,6 +3,11 @@ package ocp8.ch1;
 /**
  * Created by rtsy on 23.01.2016.
  */
+
+/**
+ * Virtual method is regular non-static method. Java looks for an overriden method rather
+ * than necessarily using the one in the class that the compiler says we have.
+ */
 public class VirtualMethod {
     static void feedAnimal(Animal animal) {
         animal.feed();

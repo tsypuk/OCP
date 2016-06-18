@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 /**
- * On the OCP Oracle now calls virtual methods in the objectives. Java lloked at the actual type
+ * On the OCP Oracle now calls virtual methods in the objectives. Java invoked at the actual type
  * of animal at runtime and called feed on that. The decision is happen at runtime.
  */
 public class VirtualMethodTest {
@@ -35,21 +35,21 @@ public class VirtualMethodTest {
     public void testVirtualLion() {
         Animal lion = new Lion();
         feedAnimal(lion);
-        assertEquals("Lion eats meat.\r\n", outContent.toString());
+        assertEquals("Lion eats meat.\n", outContent.toString());
     }
 
     @Test
     public void testVirtualBird() {
         Animal bird = new Bird();
         feedAnimal(bird);
-        assertEquals("Bird eats seed.\r\n", outContent.toString());
+        assertEquals("Bird eats seed.\n", outContent.toString());
     }
 
     @Test
     public void testInstanceVariables() {
         Animal lion = new Lion();
         lion.printName();
-        assertEquals("???\r\n", outContent.toString());
+        assertEquals("???\n", outContent.toString());
         assertEquals("???", lion.name);
         assertEquals("Lion", ((Lion) lion).name);
     }
@@ -57,7 +57,7 @@ public class VirtualMethodTest {
     @Test
     public void testInstanceVariables2() {
         Animal lion = new Lion();
-        ((Lion) lion).printName();
+        (lion).printName();
         assertFalse("Lion".equals(outContent.toString()));
     }
 
@@ -65,13 +65,14 @@ public class VirtualMethodTest {
     public void testOverriddenVirtual() {
         Animal lion = new Lion();
         lion.play();
-        assertEquals("toss in meat\r\n", outContent.toString());
+        //The overriden method will be called all time. Even thought the call is from the Animal
+        assertEquals("toss in meat\n", outContent.toString());
     }
 
     @Test
     public void testOverridenVirtual2() {
         Animal lion = new Cow();
         lion.play();
-        assertEquals("pet animal\r\n", outContent.toString());
+        assertEquals("pet animal\n", outContent.toString());
     }
 }

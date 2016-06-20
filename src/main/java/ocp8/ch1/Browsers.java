@@ -31,6 +31,12 @@ public class Browsers {
         IE e = (IE) firefox;
         e.go();
 /*
+        Error:(35, 22) java: incompatible types: ocp8.ch1.Browsers.Firefox cannot be converted to ocp8.ch1.Browsers.IE
+        Firefox firefox2 = new Firefox();
+        IE ie = (IE) firefox2;
+*/
+
+/*
 
         Error:(33, 29) java: incompatible types: ocp8.ch1.Browsers.Browser cannot be converted to java.lang.String
         String l = (String) firefox;

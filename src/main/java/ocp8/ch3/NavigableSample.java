@@ -8,8 +8,39 @@ import java.util.*;
 public class NavigableSample {
 
     public static void main(String[] args) {
-        navigableSet();
+        treeMapOperations();
+//        navigableSet();
 //        navigableMap();
+    }
+
+    private static void mapOperations() {
+        Map<String, String> map = new HashMap<>();
+        map.put("koala", "bamboo");
+        map.put("lion", "meat");
+        map.put("girafee", "leaf");
+
+        for (String s : map.keySet()) {
+            System.out.println(s);
+        }
+
+        for (String s : map.values()) {
+            System.out.println(s);
+        }
+    }
+
+    private static void treeMapOperations() {
+        Map<String, String> map = new TreeMap<>();
+        map.put("koala", "bamboo");
+        map.put("girafee", "leaf");
+        map.put("lion", "meat");
+
+        for (String s : map.keySet()) {
+            System.out.println(s);
+        }
+
+        for (String s : map.values()) {
+            System.out.println(s);
+        }
     }
 
     private static void navigableSet() {

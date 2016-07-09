@@ -1,7 +1,6 @@
 package ocp8.ch8.serialization;
 
 import org.junit.Test;
-
 import java.io.*;
 
 import static org.junit.Assert.*;
@@ -15,6 +14,8 @@ public class AnimalTest {
     public void testSerialization() throws IOException, ClassNotFoundException {
         Animal animal = new Animal("rabbit", 3, 'P');
         animal.setWeight(10);
+        animal.setObj("This is object");
+
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("FILE_SERIAL_dump"));
         out.writeObject(animal);
 
@@ -29,6 +30,28 @@ public class AnimalTest {
         // Weigth field is static and it is not serialized - it is common for all classes in JVM
         assertEquals(100, animalDeserial.getWeight());
         assertEquals("rabbit", animalDeserial.getName());
+        assertNotNull(animalDeserial.getObj());
+        assertNotNull(animalDeserial.getList());
+    }
+
+    @Test
+    public void testObject() {
+        Object o = new Object();
+        assertFalse(o instanceof Serializable);
+    }
+
+    @Test
+    public void testConstructor() throws IOException, ClassNotFoundException {
+
+
+        Hawk hawk = new Hawk();
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("BIRD.dump"));
+        out.writeObject(hawk);
+
+        ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("BIRD.dump"));
+        Hawk bird = (Hawk) inputStream.readObject();
+
+        assertNull(bird.name);
     }
 
 }

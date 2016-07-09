@@ -1,6 +1,8 @@
 package ocp8.ch8.serialization;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by rtsy on 28.02.2016.
@@ -18,6 +20,8 @@ public class Animal implements Serializable{
     private transient int age = 10;
     private static transient char type = 'C';
     private static int weight = 20;
+    private Object obj = null;
+    private List<String> list = new ArrayList<>();
 
     {this.age = 14;}
 
@@ -59,6 +63,22 @@ public class Animal implements Serializable{
 
     public static int getWeight() {
         return weight;
+    }
+
+    public Object getObj() {
+        return obj;
+    }
+
+    public void setObj(Object obj) {
+        this.obj = obj;
+    }
+
+    public List<String> getList() {
+        return list;
+    }
+
+    public void setList(List<String> list) {
+        this.list = list;
     }
 
     public void setWeight(int weight) {

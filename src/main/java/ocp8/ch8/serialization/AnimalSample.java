@@ -16,12 +16,12 @@ import java.io.ObjectOutputStream;
 public class AnimalSample {
     public static void main(String[] args)
             throws IOException, ClassNotFoundException {
-//        Animal animal = new Animal();
+        Animal animal = new Animal();
 //
-//        Animal animal2 = new Animal("Lion", 22, 'L');
-//        animal2.setWeight(90);
-//        checkAnimal(animal);
-//        checkAnimal(animal2);
+        Animal animal2 = new Animal("Lion", 22, 'L');
+        animal2.setWeight(90);
+        checkAnimal(animal);
+        checkAnimal(animal2);
 
         Animal animal3 = (Animal) readAnimal(new File("Animal"));
         System.out.println(animal3);
@@ -36,7 +36,8 @@ public class AnimalSample {
 
     private static Animal readAnimal(File file)
             throws IOException, ClassNotFoundException {
-        Animal animal;ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(file)));
+        Animal animal;
+        ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(file)));
         animal = (Animal)in.readObject();
         return animal;
     }

@@ -14,10 +14,10 @@ public class Animal implements Serializable{
     // In case that there are no instances of this class in JVM memory then static field will be init by value 'C'.
     // No constructors call. No default initialization blocks.
 
-    private transient String name;
+    private String name;
     private transient int age = 10;
     private static transient char type = 'C';
-    private int weight = 20;
+    private static int weight = 20;
 
     {this.age = 14;}
 
@@ -31,6 +31,34 @@ public class Animal implements Serializable{
         this.name = "Unknown";
         this.age = 12;
         this.type = 'Q';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public static char getType() {
+        return type;
+    }
+
+    public static void setType(char type) {
+        Animal.type = type;
+    }
+
+    public static int getWeight() {
+        return weight;
     }
 
     public void setWeight(int weight) {

@@ -67,7 +67,7 @@ public class FutureService {
         Callable<String> task2 = () -> "Monkey";
 
         Future result1 = service.schedule(task1, 10, TimeUnit.SECONDS);
-        System.out.println("result1");
+        System.out.println("result1" + result1.get());
         Future<String> result2 = service.schedule(task2, 15, TimeUnit.SECONDS);
         System.out.println("result2");
         service.shutdown();

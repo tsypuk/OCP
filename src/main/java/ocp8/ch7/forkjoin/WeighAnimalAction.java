@@ -9,7 +9,7 @@ import java.util.concurrent.RecursiveAction;
 /**
  * Created by rtsy on 21.02.2016.
  */
-public class WeighAnimalAction extends RecursiveAction{
+public class WeighAnimalAction extends RecursiveAction {
     private int start;
     private int end;
     private Double[] weights;
@@ -29,7 +29,7 @@ public class WeighAnimalAction extends RecursiveAction{
             }
         }
         else {
-            int middle = start + (end - start)/2;
+            int middle = start + (end - start) / 2;
             System.out.println("start: " + start + ", middle: " + middle + ", end: " + end);
 
             invokeAll(new WeighAnimalAction(weights, start, middle), new WeighAnimalAction(weights, middle, end));

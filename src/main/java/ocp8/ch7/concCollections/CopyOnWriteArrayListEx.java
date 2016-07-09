@@ -3,18 +3,27 @@ package ocp8.ch7.concCollections;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 
 public class CopyOnWriteArrayListEx {
     public static void main(String[] args) {
-        runCopyOnWriteArrayList();
+//        runCopyOnWriteArrayList();
 
         Map<String, Integer> map = new ConcurrentHashMap<>();
         map.put("zebra", 52);
         map.put("elephant", 10);
-        System.out.println(map.get("elephant"));
+        System.out.println(map);
+        // The iterator created by keySet() is updated as soon as  an object is removed from the map.
+        map.keySet().forEach((key) -> {
+            Random random = new Random();
+            if (random.nextInt(5) > 0) {
+                map.remove(key);
+            }
+        });
+        System.out.println(map);
     }
 
     /**
